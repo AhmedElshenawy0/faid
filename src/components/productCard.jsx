@@ -5,6 +5,7 @@ import {
   HeartOutlined,
   HeartFilled,
 } from "@ant-design/icons";
+import { FaStar } from "react-icons/fa6";
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -14,7 +15,6 @@ const ProductCard = ({
   productName,
   description,
   price,
-  rating,
   isNew = true,
   isFavorite = false,
   onAddToCart,
@@ -72,17 +72,20 @@ const ProductCard = ({
 
         {/* Product Details */}
         <div className={`space-y-2 ${rtlClass}`}>
-          <div className="flex items-center justify-end space-x-2 space-x-reverse">
-            <Text className="text-lg font-bold text-amber-900">
-              {rating.toFixed(1)}
-            </Text>
-            <Rate
-              disabled
-              allowHalf
-              defaultValue={rating}
-              count={5}
-              className="text-sm"
-            />
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
+              marginBottom: "10px",
+            }}
+            className="justify-end"
+          >
+            <span>
+              <FaStar size={12} />
+            </span>
+            <span className="text-sm font-semibold"> 4.5</span>
+            <span style={{ fontSize: "12px", color: "#777" }}>(120 تقييم)</span>
           </div>
 
           <p
