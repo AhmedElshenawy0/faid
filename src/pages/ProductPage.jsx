@@ -25,7 +25,7 @@ const relatedProducts = [
   },
   {
     id: "3",
-    title: "أريكة فاخرة",
+    title: "كرسي مريح عصري",
     image: "/faid_product_5-removebg-preview.png",
     price: 34000,
     rating: 4.8,
@@ -33,7 +33,7 @@ const relatedProducts = [
   },
   {
     id: "4",
-    title: "طاولة قهوة خشبية",
+    title: "كرسي مريح عصري",
     image: "/faid_product_4-removebg-preview.png",
     price: 5600,
     rating: 4.5,
