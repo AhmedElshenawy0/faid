@@ -10,7 +10,7 @@ export default function Navbar() {
   const { pathname } = useLocation();
 
   const navItems = [
-    { name: "الرئيسية", path: "/" },
+    { name: "الرئيسية", path: "/products/1" },
     { name: "غرف النوم", path: "/bedroom" },
     { name: "غرف المعيشة", path: "/living" },
     { name: "غرف السفرة", path: "/dining" },
