@@ -7,11 +7,10 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 import { FaRegSmile, FaRegHeart } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { Collapse } from "antd";
-import { FC } from "react";
-import { Card } from "antd";
 import ProductCard from "../components/productCard";
 import { Carousel } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import { motion, AnimatePresence } from "framer-motion";
 
 const relatedProducts = [
   {
@@ -126,8 +125,8 @@ export default function ProductPage() {
   }
 
   return (
-    <ConfigProvider direction="rtl">
-      <section className="py-2 px-4 md:px-10 bg-[#f5f5dc]">
+    <div direction="rtl" className="bg-[#f5f5dc] px-4">
+      <section className="-mt-1 md:px-10 bg-[#f5f5dc]">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10">
           {/* --- Product Images & Details --- */}
           <div className="max-w-md mx-auto px-2 relative">
@@ -148,11 +147,18 @@ export default function ProductPage() {
 
             {/* Main Image */}
             <div className="text-center mb-5 relative">
-              <img
-                src={selectedImage}
-                alt={product.title}
-                className="w-full aspect-[1/0.9] rounded-xl"
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={selectedImage}
+                  src={selectedImage}
+                  alt={product.title}
+                  className="w-full aspect-[1/0.9] rounded-xl"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                />
+              </AnimatePresence>
             </div>
 
             {/* Thumbnails / Small Images */}
@@ -273,7 +279,7 @@ export default function ProductPage() {
 
       {/* Second section */}
 
-      <section className="max-w-7xl mx-auto px-4 md:px-10 py-6 cairo-font">
+      <section className="max-w-7xl px-2 mx-auto md:px-10 py-6 cairo-font">
         <h2 className="text-xl text-end font-bold mb-4">معلومات إضافية</h2>
         <Collapse
           defaultActiveKey={["1"]}
@@ -298,7 +304,7 @@ export default function ProductPage() {
 
       {/* Third Section */}
       {/* Third Section: Related Products */}
-      <section className="max-w-7xl mx-auto px-4 md:px-10 py-6">
+      <section className="max-w-7xl mx-auto px-2 md:px-10 py-6">
         <h2 className="text-xl font-bold mb-4 text-end">منتجات ذات صلة</h2>
 
         <div className="relative">
@@ -343,6 +349,6 @@ export default function ProductPage() {
           </Carousel>
         </div>
       </section>
-    </ConfigProvider>
+    </div>
   );
 }

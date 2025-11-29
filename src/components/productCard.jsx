@@ -31,7 +31,7 @@ const ProductCard = ({
     >
       <div className="relative cairo-font">
         {/* Header: Heart & New Badge */}
-        <div className="flex justify-end items-center mb-4 relative">
+        <div className="flex justify-start items-center mb-4 relative">
           <button
             onClick={() => onToggleFavorite(id)}
             className="w-9 h-9 rounded-full bg-white border border-amber-400 
@@ -98,7 +98,7 @@ const ProductCard = ({
 
         {/* Footer: Price & Button */}
         <div className="flex flex-col mt-4 space-y-2">
-          <Text className="text-2xl font-extrabold text-green-700 m-0">
+          <Text className="text-2xl text-end font-extrabold text-green-700 m-0">
             {formattedPrice}
           </Text>
 
