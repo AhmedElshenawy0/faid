@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="min-h-[calc(100vh-116px)] bg-[#f5f5dc] pb-14 flex items-center justify-center px-4">
+    <div className="min-h-[calc(100vh-116px)] bg-[#e9e7d9] text-[#442727] pb-14 flex items-center justify-center px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -24,23 +24,23 @@ export default function Home() {
         />
 
         {/* Title */}
-        <h1 className="text-3xl md:text-4xl font-extrabold text-[#593f36] tracking-wide">
+        <h1 className="text-3xl md:text-4xl font-extrabold tracking-wide">
           أهلاً بكم في متجرنا
         </h1>
 
         {/* Subtitle */}
-        <p className="text-gray-700 mt-3 text-base md:text-lg font-medium">
+        <p className=" mt-3 text-base md:text-lg font-medium">
           يتم تطوير واجهة الموقع حالياً — موعد الإطلاق قريب جداً
         </p>
 
         {/* Decorative Divider */}
-        <div className="mt-6 w-24 h-1 bg-[#593f36] rounded-full"></div>
+        <div className="mt-6 w-24 h-1 bg-[#442727] rounded-full"></div>
 
         {/* Soft animation bubbles */}
         <div className="flex gap-2 mt-6">
-          <div className="w-3 h-3 bg-[#593f36] rounded-full animate-bounce"></div>
-          <div className="w-3 h-3 bg-[#593f36] rounded-full animate-bounce delay-150"></div>
-          <div className="w-3 h-3 bg-[#593f36] rounded-full animate-bounce delay-300"></div>
+          <div className="w-3 h-3 bg-[#442727] rounded-full animate-bounce"></div>
+          <div className="w-3 h-3 bg-[#442727] rounded-full animate-bounce delay-150"></div>
+          <div className="w-3 h-3 bg-[#442727] rounded-full animate-bounce delay-300"></div>
         </div>
       </motion.div>
     </div>
