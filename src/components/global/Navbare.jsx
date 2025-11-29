@@ -10,7 +10,7 @@ export default function Navbar() {
   const { pathname } = useLocation();
 
   const navItems = [
-    { name: "الرئيسية", path: "/products/1" },
+    { name: "صفحة المنتج", path: "/products/1" },
     { name: "غرف النوم", path: "/bedroom" },
     { name: "غرف المعيشة", path: "/living" },
     { name: "غرف السفرة", path: "/dining" },
@@ -85,7 +85,7 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed inset-0 bg-white z-40 px-6 pt-20 pb-10 flex flex-col gap-6 shadow-lg"
+            className="fixed inset-0 bg-white z-40 px-6 pt-24 pb-10 flex flex-col gap-6 shadow-lg"
           >
             {navItems.map(({ name, path }) => (
               <Link

@@ -20,14 +20,12 @@ const Footer = () => {
         <FaInstagram color="white" />
       </button>
 
-      <p>contact@furniture-website.eg</p>
+      <p>contact@Faid-website.eg</p>
 
       <p className="leading-relaxed">
         نحن نقدم خدماتنا بكل فخر لعملائنا في جميع أنحاء مصر — من القاهرة،
         الإسكندرية، الجيزة، والقاهرة الجديدة، إلى الساحل الشمالي، البحر الأحمر،
-        وصعيد مصر. سواء كنت علامة تجارية محلية صاعدة أو شركة عالمية تتوسع في
-        منطقة الشرق الأوسط وشمال أفريقيا، فإننا نوفر لك نهجًا مبتكرًا وفعالًا
-        يلبي أهدافك وجمهورك المستهدف.
+        وصعيد مصر.
       </p>
 
       <div className="flex justify-center gap-4 mt-4">
@@ -37,13 +35,13 @@ const Footer = () => {
       </div>
 
       <p className="mt-8">
-        شركة الأثاث الحديثة ش.ذ.م.م، مسجلة في مصر. السجل التجاري رقم 123456789 |{" "}
+        شركة فايد ش.ذ.م.م، مسجلة في مصر. السجل التجاري رقم 123456789 |{" "}
         <span className="underline cursor-pointer">سياسة الخصوصية</span>
       </p>
 
       <p className="text-sm text-center font-medium text-white">
-        جميع الحقوق محفوظة © <span className="font-bold">الأثاث الحديث</span>{" "}
-        2025 — برمجة وتصميم{" "}
+        جميع الحقوق محفوظة © <span className="font-bold">فايد</span> 2025 —
+        برمجة وتصميم{" "}
         <span className="text-white hover:text-gray-200 transition font-extrabold">
           ريكاز
         </span>
