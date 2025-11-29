@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Now you can write any CSS */
+:root {
+  --secondary-color: #dad7cd;
+  --btn-bg: #3a5a40;
+  --title-color: #3a5a40;
+  --subtitle-color: #3a5a40;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  color: #2c2c2c;
+}
+
+.cairo-font {
+  font-family: "Cairo", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
