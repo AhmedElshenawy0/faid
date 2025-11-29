@@ -117,7 +117,11 @@ export default function ProductPage() {
     console.log(`Product ${productId} added to cart.`);
     // Add your state logic here
   };
+  const [activeKey, setActiveKey] = useState(null);
 
+  const toggle = (key) => {
+    setActiveKey(activeKey === key ? null : key);
+  };
   const handleToggleFavorite = (productId) => {
     console.log(`Product ${productId} toggled favorite.`);
     // Add your state logic here
@@ -127,8 +131,8 @@ export default function ProductPage() {
   }
 
   return (
-    <div direction="rtl" className="bg-[#f5f5dc] px-4">
-      <section className="-mt-1 md:px-10 bg-[#f5f5dc]">
+    <div direction="rtl" className="bg-[#e9e7d9] px-4 text-[#442727]">
+      <section className="-mt-1 md:px-10">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10">
           {/* --- Product Images & Details --- */}
           <div className="max-w-md mx-auto px-2 relative">
@@ -137,7 +141,7 @@ export default function ProductPage() {
               {/* Centered Title & Sentence */}
               <div className="text-center">
                 <h1 className="font-bold">تفاصيل المنتج</h1>
-                <p className="text-gray-400 font-medium text-[12px] mt-1">
+                <p className=" font-medium text-[12px] mt-1">
                   كل ما تحتاج معرفته عن المنتج قبل الشراء
                 </p>
               </div>
@@ -187,11 +191,12 @@ export default function ProductPage() {
             {/* Product Details */}
             <div
               style={{
-                background: "#fff",
+                background: "#d2c6b2",
                 padding: "20px",
                 borderRadius: "12px",
                 width: "100%",
                 direction: "rtl",
+                color: "#442727",
               }}
             >
               {/* Top Icons */}
@@ -226,7 +231,7 @@ export default function ProductPage() {
               </div>
 
               {/* Bullet points */}
-              <ul className="text-gray-400 flex flex-col gap-1">
+              <ul className=" flex flex-col gap-1">
                 <li className="text-sm">مصنوع من جلد فاخر عالي الجودة</li>
                 <li className="text-sm">الأبعاد: 90×50×35 سم - الوزن 13 كجم</li>
                 <li className="text-sm">يدعم جميع وظائف الجلوس المريحة</li>
@@ -261,7 +266,7 @@ export default function ProductPage() {
               {/* Shipping Info */}
               <p
                 style={{
-                  color: "#777",
+                  color: "#442727",
                   fontSize: "12px",
                   marginBottom: "20px",
                 }}
@@ -271,7 +276,7 @@ export default function ProductPage() {
               </p>
 
               {/* Buy Button */}
-              <button className="font-semibold bg-linear-to-b from-[#a17452] to-[#67452B] text-center w-full py-2 rounded-md text-white">
+              <button className="font-semibold main-text text-center w-full py-2 rounded-md text-[#e9e7d9]">
                 اشترِ الآن
               </button>
             </div>
@@ -283,25 +288,36 @@ export default function ProductPage() {
 
       <section className="max-w-7xl px-2 mx-auto md:px-10 py-6 cairo-font">
         <h2 className="text-xl text-end font-bold mb-4">معلومات إضافية</h2>
-        <Collapse
-          defaultActiveKey={["1"]}
-          expandIconPosition="end"
-          className="bg-white rounded-lg shadow-sm"
-        >
-          {accordionData.map((item) => (
-            <Panel
+        <div className="max-w-3xl mx-auto px-4 py-6 flex flex-col gap-3">
+          {accordionData.map((item, index) => (
+            <div
               key={item.key}
-              header={
-                <span className="font-medium cairo-font">{item.title}</span>
-              }
-              className="mb-2 rounded-lg border border-gray-200"
+              className={`rounded-lg border overflow-hidden transition-all duration-300
+            bg-[#d2c6b2] text-[#442727]`}
             >
-              <p className="text-gray-600 whitespace-pre-line">
-                {item.content}
-              </p>
-            </Panel>
+              <button
+                className="w-full text-right px-4 py-3 font-bold cairo-font flex justify-between items-center focus:outline-none"
+                onClick={() => toggle(item.key)}
+              >
+                {item.title}
+                <span
+                  className={`transition-transform duration-300 ${
+                    activeKey === item.key ? "rotate-90" : ""
+                  }`}
+                >
+                  ▶
+                </span>
+              </button>
+              <div
+                className={`px-4 overflow-hidden transition-all duration-300 ${
+                  activeKey === item.key ? "max-h-96 py-3" : "max-h-0"
+                }`}
+              >
+                <p className=" whitespace-pre-line">{item.content}</p>
+              </div>
+            </div>
           ))}
-        </Collapse>
+        </div>
       </section>
 
       {/* Third Section */}

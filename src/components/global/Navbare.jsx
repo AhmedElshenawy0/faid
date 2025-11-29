@@ -18,7 +18,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header dir="rtl" className="w-full font-arabic bg-[#f5f5dc] z-50">
+    <header dir="rtl" className="w-full font-arabic bg-[#e9e7d9] z-50">
       {/* Promo Banner */}
       <div className="bg-[#F2F2F2] text-black text-sm text-center py-2 font-semibold">
         🎉 عروض خاصة لفترة محدودة – تسوق الآن!
@@ -59,7 +59,11 @@ export default function Navbar() {
             onClick={() => setMenuOpen(!menuOpen)}
             className="text-black"
           >
-            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+            {menuOpen ? (
+              <X color="#442727" size={28} />
+            ) : (
+              <Menu color="#442727" size={28} />
+            )}
           </button>
         </div>
         {/* Logo */}
@@ -85,14 +89,14 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed inset-0 bg-white z-40 px-6 pt-24 pb-10 flex flex-col gap-6 shadow-lg"
+            className="fixed inset-0 bg-[#d2c6b2] text-[#442727] z-40 px-6 pt-24 pb-10 flex flex-col gap-6 shadow-lg"
           >
             {navItems.map(({ name, path }) => (
               <Link
                 to={path}
                 key={path}
                 onClick={() => setMenuOpen(false)}
-                className={`text-lg font-semibold pb-3 ${
+                className={`text-lg font-bold pb-3 ${
                   pathname === path ? "text-black" : "text-gray-800"
                 }`}
               >

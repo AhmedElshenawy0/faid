@@ -25,16 +25,17 @@ const ProductCard = ({
 
   return (
     <Card
-      className="max-w-xs bg-amber-50 rounded-xl shadow-md border-0 
+      className="max-w-xs bg-[#d2c6b2] rounded-xl shadow-md border-0 
                  transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
       bodyStyle={{ padding: "16px" }}
+      style={{ background: "#d2c6b2" }}
     >
       <div className="relative cairo-font">
         {/* Header: Heart & New Badge */}
         <div className="flex justify-start items-center mb-4 relative">
           <button
             onClick={() => onToggleFavorite(id)}
-            className="w-9 h-9 rounded-full bg-white border border-amber-400 
+            className="w-9 h-9 rounded-full bg-white border border-[#442727] 
                        flex justify-center items-center shadow-md focus:outline-none
                        transition-transform duration-200 hover:scale-110"
             aria-label={
@@ -42,7 +43,7 @@ const ProductCard = ({
             }
           >
             {isFavorite ? (
-              <HeartFilled className="text-amber-600 text-lg" />
+              <HeartFilled className="text-amber-200 text-lg" />
             ) : (
               <HeartOutlined className="text-amber-600 text-lg" />
             )}
@@ -51,7 +52,7 @@ const ProductCard = ({
           {isNew && (
             <span
               className="absolute top-0 right-0 transform translate-x-4 -translate-y-4 
-                             px-3 py-1 bg-linear-to-b from-[#a17452] to-[#67452B] 
+                             px-3 py-1 bg-linear-to-b from-[#a17452] to-[#442727] 
                              text-white text-xs font-bold rounded-bl-lg rounded-tr-lg 
                              shadow-lg"
             >
@@ -86,12 +87,15 @@ const ProductCard = ({
 
           <p
             // level={4}
-            className="text-lg  font-extrabold text-amber-900 m-0 mt-1"
+            className="text-lg  font-extrabold text-[#442727] m-0 mt-1"
           >
             {productName}
           </p>
 
-          <Paragraph className="text-sm text-gray-600 line-clamp-3 m-0 cairo-font">
+          <Paragraph
+            className="text-sm  line-clamp-3 m-0 cairo-font"
+            style={{ color: "#442727" }}
+          >
             {description}
           </Paragraph>
         </div>
@@ -105,7 +109,7 @@ const ProductCard = ({
           <button
             onClick={() => onAddToCart(id)}
             className="w-full py-2 rounded-md text-white font-semibold
-                       bg-linear-to-b from-[#a17452] to-[#67452B] 
+                       bg-linear-to-b from-[#4b2c2c] to-[#442727] 
                        transition-transform duration-200 hover:scale-105"
           >
             أضف للعربة

@@ -1,11 +1,10 @@
 @import "tailwindcss";
 
-/* Now you can write any CSS */
 :root {
-  --secondary-color: #dad7cd;
-  --btn-bg: #3a5a40;
-  --title-color: #3a5a40;
-  --subtitle-color: #3a5a40;
+  --main-bg: #e9e7d9;
+  --second-bg: #d2c6b2;
+  --main-text: #442727;
+  --pistachio-color: #927d14;
 }
 
 body {
@@ -13,6 +12,16 @@ body {
   color: #2c2c2c;
 }
 
+.main-bg {
+  background-color: var(--main-bg);
+}
+
+.second-bg {
+  background-color: var(--second-bg);
+}
+.main-text {
+  background-color: var(--main-text);
+}
 .cairo-font {
   font-family: "Cairo", sans-serif;
 }

@@ -8,13 +8,13 @@ import {
 const Footer = () => {
   return (
     <div
-      className="relative px-6 md:px-14 py-6 md:py-10 text-gray-800 flex flex-col justify-center text-center gap-4"
+      className="relative px-6 md:px-14 py-6 md:py-10 text-[#e9e7d9] flex flex-col justify-center text-center gap-4"
       style={{
-        background: "linear-gradient(to right, #dfcfc2, #dfcfc2)",
+        background: "#442727",
         direction: "rtl",
       }}
     >
-      <div className="absolute inset-0 bg-[url('/purty-wood.png')] bg-repeat opacity-40 pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-[url('/dark-wood.png')] bg-repeat opacity-40 pointer-events-none z-0" />
 
       <button className="flex justify-center border border-white rounded-full w-fit p-1 mx-auto">
         <FaInstagram color="white" />
