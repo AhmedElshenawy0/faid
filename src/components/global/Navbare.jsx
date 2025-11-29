@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ShoppingCart, User, Search } from "lucide-react";
 
 export default function Navbar() {

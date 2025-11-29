@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { Rate, Divider, ConfigProvider } from "antd";
